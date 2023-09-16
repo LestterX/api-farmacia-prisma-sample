@@ -18,7 +18,6 @@ const createProvider = async (fUser: Omit<IFuncionario, 'id'>): Promise<String |
             console.log(funcionario);            
             return funcionario.id;            
         }
-        
         return new Error('Erro ao cadastrar funcionário')
     } catch (error) {
         console.log(error);        

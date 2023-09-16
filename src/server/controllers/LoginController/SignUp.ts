@@ -7,6 +7,8 @@ interface IBodyProps extends Omit<IFuncionario, 'id'>{}
 
 export const signup = async (req: Request<{}, {}, IBodyProps>, res: Response) => {
 
+    //Adicionar Validação com YUP talvez (Pesquisar Alternativas)
+
     const result = await LoginProvider.createProvider(req.body)
 
     if(result instanceof Error){

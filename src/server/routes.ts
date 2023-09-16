@@ -9,6 +9,6 @@ routes.get(`${endpoints_prefix}/`, (req, res) => {
 });
 
 routes.post(`${endpoints_prefix}/auth/sign-up`, LoginController.signup);
-// routes.post(`${endpoints_prefix}/auth/sign-in`, LoginController.signin);
+routes.post(`${endpoints_prefix}/auth/sign-in`, LoginController.signin);
 
 export {routes};
