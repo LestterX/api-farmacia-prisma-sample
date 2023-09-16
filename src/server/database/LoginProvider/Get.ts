@@ -1,0 +1,5 @@
+const getProvider = () => {
+
+};
+
+export {getProvider};
