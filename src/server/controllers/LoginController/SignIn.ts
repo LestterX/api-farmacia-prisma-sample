@@ -12,15 +12,14 @@ export const signin = async (req: Request<{}, {}, IBodyProps>, res: Response) =>
         email: req.body.email,
         password: req.body.password,
     });
-    
+
     if (result instanceof Error) {
         return res.status(StatusCodes.NOT_FOUND).json({
-            errors: result.message
+            errors: `Erro ao fazer login. ${result.message}`
         })
     }
 
-    try {
-        console.log(process.env.SECRET_KEY || '');        
+    try {      
         const token = jwt.sign({ userId: result.id }, process.env.SECRET_KEY || '', { expiresIn: 900 });
         return res.status(StatusCodes.OK).json({
             userName: result.name,
